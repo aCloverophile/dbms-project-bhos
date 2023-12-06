@@ -8,11 +8,6 @@ BEGIN
 END //
 DELIMITER ;
 
--- CHECK TRIGGER 1
-INSERT INTO students (name, surname, admission_year, email, major_id) VALUES
-('Ayaz', 'Alili', 2022, 'ayaz.alili.std@bhos.edu.az', 1000005);
-
-
 -- TRIGGER 2
 DELIMITER //
 CREATE TRIGGER BeforeDeleteStudent
@@ -30,11 +25,6 @@ BEGIN
 END //
 DELIMITER ;
 
--- CHECK TRIGGER 2
-DELETE FROM students WHERE name = 'Ayaz' and surname = 'Alili';
-DELETE FROM students WHERE name = 'Aliasgar' and surname = 'Aliyev';
-
-
 -- TRIGGER 3
 DELIMITER //
 CREATE TRIGGER BeforeDeleteBook
@@ -49,13 +39,6 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
-
--- CHECK TRIGGER 3
-DELETE FROM books WHERE book_name='The War of the Two Worlds';
-INSERT INTO books (book_name, publishment_year, author_id, genre_id, count) VALUES 
-('Test_Book', 1867, 100000013, 110, 29);
-DELETE FROM books WHERE book_name='Test_Book';
-
 
 -- TRIGGER 4
 DELIMITER //
@@ -72,10 +55,6 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
-
--- CHECK TRIGGER 4
-INSERT INTO students (name, surname, admission_year, email, major_id) VALUES
-('Test', 'Test', 2026, 'test.test.std@bhos.edu.az', 1000005);
 
 
 -- TRIGGER 5
@@ -100,9 +79,3 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
-
--- CHECK TRIGGER 5
-CALL InsertBook('Test Book', 2018, 200000000, 200, 21);
-CALL InsertBook('Test Book', 2018, 200000000, 100, 21);
-CALL InsertBook('Test Book', 2018, 100000000, 200, 21);
-CALL InsertBook('Madonna in a Fur Coat', 1943, 100000024, 102, 65);
