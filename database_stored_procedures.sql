@@ -56,13 +56,6 @@ BEGIN
 END //
 DELIMITER ;
 
-
--- CHECK PROCEDURE 1 & 2
-CALL TakeBook('7ae436c0-93b6-11ee-8173-005056c00001', 10000024);
-CALL TakeBook('7ae463c0-93b6-11ee-8173-005056c00001', '10000027');
-CALL ReturnBook('7ae436c0-93b6-11ee-8173-005056c00001', 10000024);
-
-
 -- PROCEDURE 3: A new student is inserted to the database. 
 DELIMITER //
 CREATE PROCEDURE InsertStudent(
@@ -84,11 +77,6 @@ BEGIN
     END IF;
 END //
 DELIMITER ;
-
--- CHECK PROCEDURE 3
-CALL InsertStudent('Tomris', 'Huseynova', 2027, 'tomris.huseynova@bhos.edu.az', 1000005); -- FAIL
-CALL InsertStudent('Tomris', 'Huseynova', 2020, 'tomris.huseynova@bhos.edu.az', 1000005); -- SUCCESS
-
 
 -- PROCEDURE 4: A new book is inserted into the database. 
 DELIMITER //
