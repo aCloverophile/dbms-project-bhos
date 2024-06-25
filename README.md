@@ -8,11 +8,7 @@
 
 **Called the "BHOS Library Management System", the database contains corresponding schemas to describe the overall book-taking and returning processes in the university library.** 
 
----
-
-These processes are handled by the TakeBook and ReturnBook procedures described in the corresponding SQL source file. You can check and review them as examples. The source file also contains the new student and new book insertion procedures. 
-
----
+These processes are handled by the **TakeBook** and **ReturnBook** procedures described in the corresponding SQL source file. You can check and review them as examples. The source file also contains the new student and new book insertion procedures. 
 
 Some limitations, such as the students who have borrowed books cannot be deleted from the database, are handled in the triggers source file. 
 
